@@ -8,10 +8,9 @@ class BinHeap:
 
 #上浮
     def swim(self,i):
-        while i // 2 > 0:
-            if self.heapList[i]>self.heapList[i//2]:
+        while (i>1)and(self.heapList[i]>self.heapList[i//2]):
                 self.heapList[i],self.heapList[i//2] = self.heapList[i//2],self.heapList[i]
-            i = i//2
+                i = i//2
 #下沉
     def sink(self,i):
         while i<self.N:
