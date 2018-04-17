@@ -18,7 +18,7 @@ class BinHeap:
 
             if j>self.N:
                 break
-
+#我将树和一维数组搞混了
             if self.heapList[j]<self.heapList[j+1]:
                 j+=1
             if self.heapList[i]<self.heapList[j]:
@@ -39,8 +39,10 @@ class BinHeap:
         self.sink(1)
 
     def BuildHeap(self,alist):
-        self.N = len(alist)
-        self.heapList = [0] + alist
+        for i in  alist:
+            self.insert(i)
+
+
 
 
 
@@ -49,7 +51,7 @@ class BinHeap:
 if __name__ == '__main__':
     print("1111")
     bh = BinHeap()
-    bh.BuildHeap([9, 6, 3,2, 1])
+    bh.BuildHeap([9, 6, 3,2, 1,500])
     bh.insert(100)
     bh.insert(-100)
     bh.insert(300)
